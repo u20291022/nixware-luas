@@ -37,7 +37,7 @@ C_UseConfigSettings = AddMultiComboBox( "Use Config Settings", "C_UseConfigSetti
 
 C_MenuElements = AddComboBox( "", "C_MenuElements", { "AntiHit Group", "Overrides Group", "Visuals Group", "Misc Group" }, 0 )
 
-C_AutomaticDesyncSwap = AddCheckBox( "Automatic Desync Swap", "C_AutomaticDesyncSwap", false )
+C_AutomaticDesyncSwapConds = AddMultiComboBox("Automatic Desync Swap Conditions", "C_AutomaticDesyncSwapConds", { "Stand", "Move", "Air", "Slowwalk" }, { false, false, false, false } ) --AddCheckBox( "Automatic Desync Swap", "C_AutomaticDesyncSwap", false )
 C_ExtendInUse = AddCheckBox( "Extend InUse", "C_ExtendInUse", false )
 C_JitterValue = AddSliderInt( "Jitter Value (at targets - off)", "C_JitterValue", 0, 180, 0 )
 C_LowDeltaDesyncConditions = AddMultiComboBox("Low Delta Desync Conditions", "C_LowDeltaDesyncConditions", { "Stand", "Move", "Air", "Slowwalk" }, { false, false, false, false } )
@@ -207,7 +207,7 @@ function LoadingCircle(  )
 	fExtendCircleRotation = g_flLoadingAnimation * (math.pi / 180)
 	while (fRotate < (math.pi / 2) + 0.1) do
 		for iSub = 1, 3 do
-			vecNewPosition = vec2_t.new( (16 - iSub)  * math.cos(fRotate + fExtendCircleRotation) + 34.5, (15 - iSub)  * math.sin(fRotate + fExtendCircleRotation) + 34.5 )
+			vecNewPosition = vec2_t.new( (16 - iSub)  * math.cos(fRotate + fExtendCircleRotation) + 35, (16 - iSub)  * math.sin(fRotate + fExtendCircleRotation) + 35 )
 			if (vecPrevPosition.x ~= 0) then
 				AddLine( vec2_t.new( vecPrevPosition.x, vecPrevPosition.y ), vec2_t.new( vecNewPosition.x, vecNewPosition.y ), g_UIColor:get_value() )
 			end
@@ -456,7 +456,7 @@ end
 RegisterCallback( "paint", function()
 
 	if (not g_bLoaded) then
-		C_SpreadCircleColor:set_visible(false); C_SpreadCircle:set_visible(false); C_OnLethalValue:set_visible(false); C_LethalSafePoints:set_visible(false); C_JitterValue:set_visible(false); C_CustomScopeOverlayColor:set_visible(false); C_StaticLegs:set_visible(false); C_CustomScopeOverlayDistance:set_visible(false); C_CustomScopeOverlay:set_visible(false); C_VelocityGraph:set_visible(false); C_VelocityGraphColor:set_visible(false); C_DrawShotTraceAutoColor:set_visible(false); C_DrawShotTraceConds:set_visible(false); C_DrawShotTraceColor:set_visible(false); C_SwapKnife:set_visible(false); C_ValveFakeDuckBind:set_visible(false); C_JumpScout:set_visible(false); C_MenuElements:set_visible(false); C_CustomTeamTag:set_visible(false); C_XPosition:set_visible(false); C_YPosition:set_visible(false);	C_LowDeltaDesyncConditions:set_visible(false); C_AutomaticDesyncSwap:set_visible(false); C_ExtendInUse:set_visible(false); C_HotkeysListSettings:set_visible(false); C_EnableManualIndicator:set_visible(false); C_ManualIndicatorOutline:set_visible(false); C_ManualIndicatorDistance:set_visible(false); C_ManualIndicatorSize:set_visible(false); C_ManualIndicatorColor:set_visible(false); C_ManualIndicatorOutlineColor:set_visible(false); C_LeftManualBind:set_visible(false); C_RightManualBind:set_visible(false); C_BackManualBind:set_visible(false); C_OverrideDamageValue:set_visible(false); C_OverrideDamageBind:set_visible(false); C_ForceSafePointsBind:set_visible(false); C_ForceHeadAimBind:set_visible(false); C_ForceBodyAimBind:set_visible(false); C_ExtendBacktrackBind:set_visible(false); C_DisableResolverBind:set_visible(false); C_BuyPistol:set_visible(false); C_BuyWeapon:set_visible(false); C_BuyOther:set_visible(false);
+		C_SpreadCircleColor:set_visible(false); C_SpreadCircle:set_visible(false); C_OnLethalValue:set_visible(false); C_LethalSafePoints:set_visible(false); C_JitterValue:set_visible(false); C_CustomScopeOverlayColor:set_visible(false); C_StaticLegs:set_visible(false); C_CustomScopeOverlayDistance:set_visible(false); C_CustomScopeOverlay:set_visible(false); C_VelocityGraph:set_visible(false); C_VelocityGraphColor:set_visible(false); C_DrawShotTraceAutoColor:set_visible(false); C_DrawShotTraceConds:set_visible(false); C_DrawShotTraceColor:set_visible(false); C_SwapKnife:set_visible(false); C_ValveFakeDuckBind:set_visible(false); C_JumpScout:set_visible(false); C_MenuElements:set_visible(false); C_CustomTeamTag:set_visible(false); C_XPosition:set_visible(false); C_YPosition:set_visible(false);	C_LowDeltaDesyncConditions:set_visible(false); C_AutomaticDesyncSwapConds:set_visible(false); C_ExtendInUse:set_visible(false); C_HotkeysListSettings:set_visible(false); C_EnableManualIndicator:set_visible(false); C_ManualIndicatorOutline:set_visible(false); C_ManualIndicatorDistance:set_visible(false); C_ManualIndicatorSize:set_visible(false); C_ManualIndicatorColor:set_visible(false); C_ManualIndicatorOutlineColor:set_visible(false); C_LeftManualBind:set_visible(false); C_RightManualBind:set_visible(false); C_BackManualBind:set_visible(false); C_OverrideDamageValue:set_visible(false); C_OverrideDamageBind:set_visible(false); C_ForceSafePointsBind:set_visible(false); C_ForceHeadAimBind:set_visible(false); C_ForceBodyAimBind:set_visible(false); C_ExtendBacktrackBind:set_visible(false); C_DisableResolverBind:set_visible(false); C_BuyPistol:set_visible(false); C_BuyWeapon:set_visible(false); C_BuyOther:set_visible(false);
 	end --If not loaded then hide all menu elements
 
 	if not LoadCustomerList( ) or not LoadWeaponList( ) then
@@ -473,7 +473,7 @@ RegisterCallback( "paint", function()
 		end
 	end
 
-	C_MenuElements:set_visible(true); C_LowDeltaDesyncConditions:set_visible(C_MenuElements:get_value() == 0); C_AutomaticDesyncSwap:set_visible(C_MenuElements:get_value() == 0); C_ExtendInUse:set_visible(C_MenuElements:get_value() == 0); C_HotkeysListSettings:set_visible(C_MenuElements:get_value() == 2); C_EnableManualIndicator:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorOutline:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorDistance:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorSize:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorColor:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorOutlineColor:set_visible(C_MenuElements:get_value() == 2); C_LeftManualBind:set_visible(C_MenuElements:get_value() == 0); C_RightManualBind:set_visible(C_MenuElements:get_value() == 0); C_BackManualBind:set_visible(C_MenuElements:get_value() == 0); C_OverrideDamageValue:set_visible(C_MenuElements:get_value() == 1); C_OverrideDamageBind:set_visible(C_MenuElements:get_value() == 1); C_ForceSafePointsBind:set_visible(C_MenuElements:get_value() == 1); C_ForceHeadAimBind:set_visible(C_MenuElements:get_value() == 1); C_ForceBodyAimBind:set_visible(C_MenuElements:get_value() == 1); C_ExtendBacktrackBind:set_visible(C_MenuElements:get_value() == 1); C_DisableResolverBind:set_visible(C_MenuElements:get_value() == 1);
+	C_MenuElements:set_visible(true); C_LowDeltaDesyncConditions:set_visible(C_MenuElements:get_value() == 0); C_AutomaticDesyncSwapConds:set_visible(C_MenuElements:get_value() == 0); C_ExtendInUse:set_visible(C_MenuElements:get_value() == 0); C_HotkeysListSettings:set_visible(C_MenuElements:get_value() == 2); C_EnableManualIndicator:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorOutline:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorDistance:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorSize:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorColor:set_visible(C_MenuElements:get_value() == 2); C_ManualIndicatorOutlineColor:set_visible(C_MenuElements:get_value() == 2); C_LeftManualBind:set_visible(C_MenuElements:get_value() == 0); C_RightManualBind:set_visible(C_MenuElements:get_value() == 0); C_BackManualBind:set_visible(C_MenuElements:get_value() == 0); C_OverrideDamageValue:set_visible(C_MenuElements:get_value() == 1); C_OverrideDamageBind:set_visible(C_MenuElements:get_value() == 1); C_ForceSafePointsBind:set_visible(C_MenuElements:get_value() == 1); C_ForceHeadAimBind:set_visible(C_MenuElements:get_value() == 1); C_ForceBodyAimBind:set_visible(C_MenuElements:get_value() == 1); C_ExtendBacktrackBind:set_visible(C_MenuElements:get_value() == 1); C_DisableResolverBind:set_visible(C_MenuElements:get_value() == 1);
 	C_SpreadCircle:set_visible(C_MenuElements:get_value() == 2); C_SpreadCircleColor:set_visible(C_MenuElements:get_value() == 2); C_OnLethalValue:set_visible(C_MenuElements:get_value() == 1); C_LethalSafePoints:set_visible(C_MenuElements:get_value() == 1); C_JitterValue:set_visible(C_MenuElements:get_value() == 0); C_CustomScopeOverlayColor:set_visible(C_MenuElements:get_value() == 2); C_StaticLegs:set_visible(C_MenuElements:get_value() == 3); C_CustomScopeOverlayDistance:set_visible(C_MenuElements:get_value() == 3); C_CustomScopeOverlay:set_visible(C_MenuElements:get_value() == 3); C_VelocityGraph:set_visible(C_MenuElements:get_value() == 2); C_VelocityGraphColor:set_visible(C_MenuElements:get_value() == 2); C_DrawShotTraceAutoColor:set_visible(C_MenuElements:get_value() == 2); C_DrawShotTraceConds:set_visible(C_MenuElements:get_value() == 3); C_DrawShotTraceColor:set_visible(C_MenuElements:get_value() == 2); C_SwapKnife:set_visible(C_MenuElements:get_value() == 3); C_ValveFakeDuckBind:set_visible(C_MenuElements:get_value() == 3); C_JumpScout:set_visible(C_MenuElements:get_value() == 3); C_CustomTeamTag:set_visible(C_MenuElements:get_value() == 3); C_BuyPistol:set_visible(C_MenuElements:get_value() == 3); C_BuyWeapon:set_visible(C_MenuElements:get_value() == 3); C_BuyOther:set_visible(C_MenuElements:get_value() == 3);
 	--^ Show menu elements
 
@@ -483,7 +483,7 @@ RegisterCallback( "paint", function()
 		ffi.cast("int*", CLMove_patch)[0] = 0x3E
 		ffi.C.VirtualProtect(ffi.cast("void*", CLMove_patch), 4, ffi.cast("int", 0x20), nil)
 		CL_MovePatched = true
-	end --CLMove path (14 -> 16 fakelag ticks)
+	end --CLMove patch (14 -> 16 fakelag ticks)
 
 	Watermark( )
 	Indicators( )
@@ -571,8 +571,16 @@ function GetWeaponSettings(  ) --Override ragebot settings
 	end
 end
 
+function IsAutomaticDesyncActive(  )
+	if C_SlowWalk:is_active() and C_AutomaticDesyncSwapConds:get_value( 3 ) then return true elseif
+	GetMove() == 2 and C_AutomaticDesyncSwapConds:get_value( 2 ) then return true elseif
+	GetMove() == 0 and not C_SlowWalk:is_active() and C_AutomaticDesyncSwapConds:get_value( 0 ) then return true elseif
+	GetMove() == 1 and C_AutomaticDesyncSwapConds:get_value( 1 ) then return true end
+	return false
+end
+
 function AutomaticDesync(  )
-	if (C_AutomaticDesyncSwap:get_value() and not IsLowDeltaActive() ) then
+	if (IsAutomaticDesyncActive() and not IsLowDeltaActive()) then
 		if (g_flDesyncSwapTime <= GetCurrentTime()) then
 			C_DesyncInverter:set_type( (g_bDesyncSwap and 1 or 0) )
 			g_flDesyncSwapTime = GetCurrentTime() + 0.065
