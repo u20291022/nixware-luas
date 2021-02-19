@@ -1,23 +1,25 @@
 GetColor, GetTimeStamp, AddNotify, GetScriptName, UnloadScript, AddCircle, AddLine, GetPlayers, GetNetvar, GetLocalPlayer, GetEntityFromHandle, GetSliderInt, OverrideSafePoint, OverrideMinDamage, OverrideBodyScale, OverrideMaxMisses, OverrideHeadScale, OverrideHitScan, OverrideDesyncCorrection, RegisterCallback, GetBind, GetCurrentTime, FindPattern, GetCheckBox, GetIntervalPerTick, AddText, GetChokedCommands, SetClanTag, IsConnected, GetViewAngles, ExecuteClientCmd = ui.get_color_edit, client.get_time_stamp, client.notify, client.get_script_name, client.unload_script, renderer.circle, renderer.line, entitylist.get_players, se.get_netvar, entitylist.get_local_player, entitylist.get_entity_from_handle, ui.get_slider_int, ragebot.override_safe_point, ragebot.override_min_damage, ragebot.override_body_scale, ragebot.override_max_misses, ragebot.override_head_scale, ragebot.override_hitscan, ragebot.override_desync_correction, client.register_callback, ui.get_key_bind, globalvars.get_current_time, client.find_pattern, ui.get_check_box, globalvars.get_interval_per_tick, renderer.text, clientstate.get_choked_commands, se.set_clantag, engine.is_connected, engine.get_view_angles, engine.execute_client_cmd
 AddSliderInt, AddCheckBox, AddComboBox, AddMultiComboBox, AddBind, AddColorEdit, AddTextInput, GetScreenSize, GetSystemTime, GetUserName, GetLatency, GetTextSize, AddRectFilled, AddRectFilledFade, AddFilledPolygon, GetConvar, GetEntityByClassID, W2S, GetLocalPlayerIndex, GetPlayerForUserID, GetMapName, AddSliderFloat, GetSliderFloat, GetPlayerByIndex, GetPlayerInfo, GetRealTime = ui.add_slider_int, ui.add_check_box, ui.add_combo_box, ui.add_multi_combo_box, ui.add_key_bind, ui.add_color_edit, ui.add_text_input, engine.get_screen_size, client.get_system_time, client.get_username, se.get_latency, renderer.get_text_size, renderer.rect_filled, renderer.rect_filled_fade, renderer.filled_polygon, se.get_convar, entitylist.get_entities_by_class_id, se.world_to_screen, engine.get_local_player, engine.get_player_for_user_id, engine.get_level_name_short, ui.add_slider_float, ui.get_slider_float, entitylist.get_entity_by_index, engine.get_player_info, globalvars.get_real_time
-ItemDefinitionIndex_t = { ["1"] = "deagle", ["2"] = "pistols", ["3"] = "pistols", ["4"] = "pistols", ["7"] = "rifle", ["8"] = "rifle", ["9"] = "awp", ["10"] = "rifle", ["11"] = "auto", ["13"] = "rifle", ["14"] = "rifle", ["16"] = "rifle", ["17"] = "smg", ["19"] = "smg", ["23"] = "smg", ["24"] = "smg", ["25"] = "smg", ["26"] = "smg", ["27"] = "shotguns", ["28"] = "rifle", ["29"] = "shotguns", ["30"] = "pistols", ["31"] = "taser", ["32"] = "pistols", ["33"] = "smg", ["34"] = "smg", ["35"] = "shotguns", ["36"] = "pistols", ["38"] = "auto", ["39"] = "rifle", ["40"] = "scout", ["60"] = "rifle", ["61"] = "pistols", ["63"] = "pistols", ["64"] = "revolver" }; g_pTextFont = renderer.setup_font( "C:/Windows/fonts/Verdana.ttf", 14, 0 ); C_SlowWalk = GetBind( "antihit_extra_slowwalk_bind" ); g_bAntihit = nil; g_bAntihitSetted = false; C_AntiHitEnable = GetCheckBox( "antihit_antiaim_enable" ); g_iLowDelta = 65; g_iPrevTick = -1; C_FakeDuck = GetBind( "antihit_extra_fakeduck_bind" ); g_bNeedToBuy = true; g_bFreezeTimeBuy = true;
+ItemDefinitionIndex_t = { ["1"] = "deagle", ["2"] = "pistols", ["3"] = "pistols", ["4"] = "pistols", ["7"] = "rifle", ["8"] = "rifle", ["9"] = "awp", ["10"] = "rifle", ["11"] = "auto", ["13"] = "rifle", ["14"] = "rifle", ["16"] = "rifle", ["17"] = "smg", ["19"] = "smg", ["23"] = "smg", ["24"] = "smg", ["25"] = "smg", ["26"] = "smg", ["27"] = "shotguns", ["28"] = "rifle", ["29"] = "shotguns", ["30"] = "pistols", ["31"] = "taser", ["32"] = "pistols", ["33"] = "smg", ["34"] = "smg", ["35"] = "shotguns", ["36"] = "pistols", ["38"] = "auto", ["39"] = "rifle", ["40"] = "scout", ["60"] = "rifle", ["61"] = "pistols", ["63"] = "pistols", ["64"] = "revolver" }; g_pTextFont = renderer.setup_font( "C:/Windows/fonts/Verdana.ttf", 14, 0 ); C_SlowWalk = GetBind( "antihit_extra_slowwalk_bind" ); g_bAntihit = nil; g_bAntihitSetted = false; C_AntiHitEnable = GetCheckBox( "antihit_antiaim_enable" ); g_iLowDelta = 65; g_iPrevTick = -1; C_FakeDuck = GetBind( "antihit_extra_fakeduck_bind" ); g_bNeedToBuy = true; g_bFreezeTimeBuy = true; HWID = "";
 g_pBindFont = renderer.setup_font("C:/Windows/fonts/Arial.ttf", 15, 0); C_ThirdPerson = GetBind( "visuals_other_thirdperson_bind" ); C_Exploit = ui.get_key_bind( "rage_active_exploit_bind" ); C_ExploitType = ui.get_combo_box( "rage_active_exploit" ); C_RageBot = ui.get_key_bind( "rage_enable_bind" ); C_AutoFire = ui.get_key_bind( "legit_autofire_bind" ); C_JumpBug = ui.get_key_bind( "misc_jump_bug_bind" ); C_EdgeJump = ui.get_key_bind( "misc_edge_jump_bind" ); g_aIndicatorsList = {}; g_aIndicatorsList.text = ""; g_aIndicatorsList.bind_type = ""; g_iOldNextYPosition = 0; g_aBindTypes = { ["0"] = "[always]", ["1"] = "[hold]", ["2"] = "[toggled]", ["3"] = "[disable]", }; g_iDragXPosition = nil; g_iDragYPosition = nil; g_bIsDragging = false; g_iDragXPosition2 = nil; g_iDragYPosition2 = nil; g_bIsDragging2 = false; C_Fakelag = GetCheckBox( "antihit_fakelag_enable" ); g_bFakeLag = nil; g_bFakeLagSetted = false; g_bFakeDucking = false; g_iSendedPackets = 0; g_iExploitType = nil; g_bExploitSetted = false; g_aNades = {}; g_vecPrevNadePos = {};
 PistolsList = {	["0"] = "",	["1"] = "buy glock; buy hkp2000; buy usp_silencer;", ["2"] = "buy elite;", ["3"] = "buy p250;",	["4"] = "buy tec9; buy fiveseven;",	["5"] = "buy deagle; buy revolver;" }; PistolsNameList = { "None",	"Glock-18/HKP2000/USP-S", "Dual Berretas", "P250", "Tec-9/Five7", "Deagle/Revolver" }; WeaponsList = { ["0"] = "",	["1"] = "buy ssg08;", ["2"] = "buy awp;", ["3"] = "buy scar20; buy g3sg1;", ["4"] = "buy galilar; buy famas;", ["5"] = "buy ak47; buy m4a1; buy m4a1_silencer;", ["6"] = "buy sg556; buy aug;", ["7"] = "buy nova;", ["8"] = "buy xm1014;", ["9"] = "buy mag7;", ["10"] = "buy m249;", ["11"] = "buy negev;", ["12"] = "buy mac10; buy mp9;", ["13"] = "buy mp7;", ["14"] = "buy ump45;", ["15"] = "buy p90;", ["16"] = "buy bizon;" }; WeaponsNameList = {	"None",	"SSG08", "AWP", "Scar20/G3SG1", "GalilAR/Famas", "AK-47/M4A1", "AUG/SG556", "Nova", "XM1014", "Mag-7", "M249", "Negev","Mac-10/MP9", "MP7", "UMP-45", "P90", "Bizon" }; OtherList = { ["0"] = "buy vest;buy vesthelm;", ["1"] = "buy hegrenade;", ["2"] = "buy molotov; buy incgrenade;", ["3"] = "buy smokegrenade;", ["4"] = "buy taser;", ["5"] = "buy defuser;" }; OtherNamesList = { "Armor", "HE", "Molotov/Incgrenade", "Smoke", "Taser", "Defuser" }
-RageBotWeapons = { "pistols", "deagle", "revolver", "smg", "rifle", "scout", "auto", "awp", "taser" }; SpeedArrayStep = 0; SpeedArray = { }; for i = 1, 300 do SpeedArray[i] = 300 / 5 end; g_MapName = nil; g_ScopeOverlayAnimation = 0; g_flViewFov = nil; g_bViewFovSetted = false; g_flJitterDelay = 0.0; g_bJitterSide = false; g_bSteamIDSended = false; g_bHitChanceSetted = {};
-shell32 = ffi.load('shell32.dll'); nullptr = ffi.new('void*'); g_sUserName = string.sub(os.getenv("HOMEPATH"), 8, string.len(os.getenv("HOMEPATH"))); g_sTempPath = "C:/Users/"..g_sUserName.."/"; g_iUserIndex = -1; g_sCustomersFile = nil; g_sWeaponsFile = nil; g_bSubscriptionRequested = false; g_bWeaponSettingsRequested = false; g_bLoaded = false; g_aUsersList = {}; g_aWeaponSettingsList = {}; g_UIColor = GetColor( "misc_ui_color" ); g_bSendMessage = true; g_flLoadTime = 0.0; g_flLoadingAnimation = 0.0; g_aHitchance = {}; C_PingSpikeAmount = GetSliderInt( "misc_ping_spike_amount" ); g_bPingOnce = true; g_iOldPingSpike = 0; CL_MovePatched = false; C_DesyncInverter = GetBind("antihit_antiaim_flip_bind"); g_flDesyncSwapTime = 0.0; g_bDesyncSwap = false; g_bLeftManual = false; g_bRightManual = false; g_flManualDelay = 0.0; g_bAntiHitAtTargets = nil; g_bAntiHitSetted = false; g_bUpdateSafety = false; g_flUpdateSafetyDelay = 0.0; g_flTempPoseDelta = 0; g_bMoved = false; C_AutoStrafe = GetCheckBox( "misc_autostrafer" ); g_bAutoStrafe = nil; g_bAutoStrafeSetted = false;
+RageBotWeapons = { "pistols", "deagle", "revolver", "smg", "rifle", "scout", "auto", "awp", "taser" }; SpeedArrayStep = 0; SpeedArray = { }; for i = 1, 300 do SpeedArray[i] = 300 / 5 end; g_MapName = nil; g_ScopeOverlayAnimation = 0; g_flViewFov = nil; g_bViewFovSetted = false; g_flJitterDelay = 0.0; g_bJitterSide = false; g_bSteamIDSended = false; g_bHWIDSended = false; g_bHitChanceSetted = {};
+shell32 = ffi.load('shell32.dll'); nullptr = ffi.new('void*'); g_sUserName = string.sub(os.getenv("HOMEPATH"), 8, string.len(os.getenv("HOMEPATH"))); g_sTempPath = "C:/Users/"..g_sUserName.."/"; g_iUserIndex = -1; g_sCustomersFile = nil; g_sWeaponsFile = nil; g_bSubscriptionRequested = false; g_bWeaponSettingsRequested = false; g_bLoaded = false; g_aUsersList = {}; g_aWeaponSettingsList = {}; g_UIColor = GetColor( "misc_ui_color" ); g_bSendMessage = true; g_bSendMessage2 = true; g_flLoadTime = 0.0; g_flLoadingAnimation = 0.0; g_aHitchance = {}; C_PingSpikeAmount = GetSliderInt( "misc_ping_spike_amount" ); g_bPingOnce = true; g_iOldPingSpike = 0; CL_MovePatched = false; C_DesyncInverter = GetBind("antihit_antiaim_flip_bind"); g_flDesyncSwapTime = 0.0; g_bDesyncSwap = false; g_bLeftManual = false; g_bRightManual = false; g_flManualDelay = 0.0; g_bAntiHitAtTargets = nil; g_bAntiHitSetted = false; g_bUpdateSafety = false; g_flUpdateSafetyDelay = 0.0; g_flTempPoseDelta = 0; g_bMoved = false; C_AutoStrafe = GetCheckBox( "misc_autostrafer" ); g_bAutoStrafe = nil; g_bAutoStrafeSetted = false;
 ffi.cdef[[ typedef struct {float x, y, z;} Vector; struct CAnimationState { char pad2[ 0x5F ];	void* m_pBaseEntity; void* m_pActiveWeapon;	void* m_pLastActiveWeapon; float m_flLastClientSideAnimationUpdateTime;	int m_iLastClientSideAnimationUpdateFramecount;	float m_flLastClientSideAnimationUpdateTimeDelta; float m_flEyeYaw; float m_flPitch; float m_flFootYaw; float m_flCurrentFeetYaw; float m_flCurrentMoveDirGoalFeetDelta; float m_flGoalMoveDirGoalFeetDelta; float m_flFeetVelDirDelta; float m_flPad0094; float m_flFeetYawCycle; float m_flFeetYawWeight; float m_flUnknown2; float m_flDuckAmount; float m_flHitGroundCycle; float m_flUnknown3; Vector m_vecOrigin; Vector m_vecLastOrigin; Vector m_vecVelocity; Vector m_vVelocityNormalized; Vector m_vecLastAcceleratingVelocity; float m_flSpeed2D; float m_flAbsVelocityZ; float m_flSpeedNormalized; float m_flRunningSpeed; float m_flDuckingSpeed; float m_flTimeSinceStartedMoving; float m_flTimeSinceStoppedMoving; bool m_bOnGround; bool m_bInHitGroundAnimation; char m_pad010A[ 2 ]; float m_flNextLowerBodyYawUpdateTime; float m_flTotalTimeInAir; float m_flStartJumpZOrigin; float m_flHitGroundWeight; float m_flGroundFraction; bool m_bJustLanded; bool m_bJustLeftFromGround; char pad_0120[ 2 ]; float m_flDuckRate; bool m_bOnLadder; char pad_0128[ 2 ]; float m_flLadderCycle; float m_flLadderWeight; bool m_bNotRunning; char pad_0135[3]; bool m_bInBalanceAdjust; };]] function GetAnimationState( pPlayer ) return ffi.cast("struct CAnimationState*", ffi.cast("int*", pPlayer:get_address() + 0x3914)[0]) end
 ffi.cdef[[struct vec3_t { float x, y, z; }; typedef void(__thiscall* AddLineOverlay_t)(void*, const struct vec3_t&, const struct vec3_t&, int, int, int, bool, float);]] g_DebugOverlay = ffi.cast("void***", se.create_interface("engine.dll", "VDebugOverlay004")); AddLineOverlay = ffi.cast("AddLineOverlay_t", g_DebugOverlay[0][5]); g_iSpreadFov = 90;
 ffi.cdef[[struct WeaponInfo_t { char _0x0000[20]; int iMaxClip; char _0x0018[12]; int iMaxReservedAmmo; char _0x0028[96]; char* szHUDName; char* szWeaponName; char _0x0090[60]; int iType; int iPrice; int iReward; char _0x00D8[20]; bool bFullAmmo; char _0x00ED[3]; int iDamage; float flArmorRatio; int iBullets; float flPenetration; char _0x0100[8]; float flRange; float flRangeModifier; char _0x0110[16]; bool bSilencer; char _0x0121[15]; float flMaxSpeed; float flMaxSpeedAlt; char _0x0138[76]; int iRecoilSeed; char _0x0188[32]; }; ]] weapon_data_call = ffi.cast("int*(__thiscall*)(void*)", FindPattern("client.dll", "55 8B EC 81 EC ? ? ? ? 53 8B D9 56 57 8D 8B ? ? ? ? 85 C9 75 04")); function GetWeaponData( weapon ) return ffi.cast("struct WeaponInfo_t*", weapon_data_call(ffi.cast("void*", weapon:get_address()))) end function HasBit(x, p) return x % (p + p) >= p end
+ffi.cdef[[typedef unsigned long DWORD; typedef uint16_t WORD; typedef void* LPVOID; typedef unsigned long DWORD_PTR; typedef int32_t BOOL; typedef uint64_t DWORDLONG; typedef struct _MEMORYSTATUSEX { DWORD dwLength; DWORD dwMemoryLoad; DWORDLONG ullTotalPhys; DWORDLONG ullAvailPhys; DWORDLONG ullTotalPageFile; DWORDLONG ullAvailPageFile; DWORDLONG ullTotalVirtual; DWORDLONG ullAvailVirtual; DWORDLONG ullAvailExtendedVirtual; } MEMORYSTATUSEX, *LPMEMORYSTATUSEX; BOOL GlobalMemoryStatusEx(LPMEMORYSTATUSEX lpBuffer); typedef struct _SYSTEM_INFO { union { DWORD dwOemId; struct { WORD wProcessorArchitecture; WORD wReserved; }; }; DWORD dwPageSize; LPVOID lpMinimumApplicationAddress; LPVOID lpMaximumApplicationAddress; DWORD_PTR dwActiveProcessorMask; DWORD dwNumberOfProcessors; DWORD dwProcessorType; DWORD dwAllocationGranularity; WORD wProcessorLevel; WORD wProcessorRevision;} SYSTEM_INFO, *LPSYSTEM_INFO; void GetSystemInfo(LPSYSTEM_INFO lpSystemInfo);]] kernel32 = ffi.load( "kernel32.dll" );
+MD5 = (function() local a={}local b,c,d,e,f=string.char,string.byte,string.format,string.rep,string.sub;local g,h,i,j,k,l;local m,n=pcall(require,'bit')if m then g,h,i,j,k,l=n.bor,n.band,n.bnot,n.bxor,n.rshift,n.lshift else m,n=pcall(require,'bit32')if m then i=n.bnot;local o=function(p)return p<=0x7fffffff and p or-(i(p)+1)end;local q=function(r)return function(s,t)return o(r(o(s),o(t)))end end;g,h,j=q(n.bor),q(n.band),q(n.bxor)k,l=q(n.rshift),q(n.lshift)else local function u(v)local w=0;local x=1;for y=1,#v do w=w+v[y]*x;x=x*2 end;return w end;local function z(A,B)local C,D=A,B;if#C<#D then C,D=D,C end;for y=#D+1,#C do D[y]=0 end end;local E;i=function(p)local v=E(p)local F=math.max(#v,32)for y=1,F do if v[y]==1 then v[y]=0 else v[y]=1 end end;return u(v)end;E=function(p)if p<0 then return E(i(math.abs(p))+1)end;local v={}local G=1;local H;while p>0 do H=p%2;v[G]=H;p=(p-H)/2;G=G+1 end;return v end;g=function(I,p)local J=E(I)local K=E(p)z(J,K)local v={}for y=1,#J do if J[y]==0 and K[y]==0 then v[y]=0 else v[y]=1 end end;return u(v)end;h=function(I,p)local J=E(I)local K=E(p)z(J,K)local v={}for y=1,#J do if J[y]==0 or K[y]==0 then v[y]=0 else v[y]=1 end end;return u(v)end;j=function(I,p)local J=E(I)local K=E(p)z(J,K)local v={}for y=1,#J do if J[y]~=K[y]then v[y]=1 else v[y]=0 end end;return u(v)end;k=function(p,L)local M=0;if p<0 then p=i(math.abs(p))+1;M=0x80000000 end;local N=math.floor;for y=1,L do p=p/2;p=g(N(p),M)end;return N(p)end;l=function(p,L)if p<0 then p=i(math.abs(p))+1 end;for y=1,L do p=p*2 end;return h(p,0xFFFFFFFF)end end end;local function O(y)local r=function(P)return b(h(k(y,P),255))end;return r(0)..r(8)..r(16)..r(24)end;local function Q(P)local R=0;for y=1,#P do R=R*256+c(P,y)end;return R end;local function S(P)local R=0;for y=#P,1,-1 do R=R*256+c(P,y)end;return R end;local function T(P,...)local U,V=1,{}local W={...}for y=1,#W do table.insert(V,S(f(P,U,U+W[y]-1)))U=U+W[y]end;return V end;local X=function(Y)return Q(O(Y))end;local Z={0xd76aa478,0xe8c7b756,0x242070db,0xc1bdceee,0xf57c0faf,0x4787c62a,0xa8304613,0xfd469501,0x698098d8,0x8b44f7af,0xffff5bb1,0x895cd7be,0x6b901122,0xfd987193,0xa679438e,0x49b40821,0xf61e2562,0xc040b340,0x265e5a51,0xe9b6c7aa,0xd62f105d,0x02441453,0xd8a1e681,0xe7d3fbc8,0x21e1cde6,0xc33707d6,0xf4d50d87,0x455a14ed,0xa9e3e905,0xfcefa3f8,0x676f02d9,0x8d2a4c8a,0xfffa3942,0x8771f681,0x6d9d6122,0xfde5380c,0xa4beea44,0x4bdecfa9,0xf6bb4b60,0xbebfbc70,0x289b7ec6,0xeaa127fa,0xd4ef3085,0x04881d05,0xd9d4d039,0xe6db99e5,0x1fa27cf8,0xc4ac5665,0xf4292244,0x432aff97,0xab9423a7,0xfc93a039,0x655b59c3,0x8f0ccc92,0xffeff47d,0x85845dd1,0x6fa87e4f,0xfe2ce6e0,0xa3014314,0x4e0811a1,0xf7537e82,0xbd3af235,0x2ad7d2bb,0xeb86d391,0x67452301,0xefcdab89,0x98badcfe,0x10325476}local r=function(_,a0,a1)return g(h(_,a0),h(-_-1,a1))end;local a2=function(_,a0,a1)return g(h(_,a1),h(a0,-a1-1))end;local a3=function(_,a0,a1)return j(_,j(a0,a1))end;local y=function(_,a0,a1)return j(a0,g(_,-a1-1))end;local a1=function(a4,s,t,a5,a6,_,P,a7)s=h(s+a4(t,a5,a6)+_+a7,0xFFFFFFFF)return g(l(h(s,k(0xFFFFFFFF,P)),P),k(s,32-P))+t end;local function a8(a9,aa,ab,ac,ad)local s,t,a5,a6=a9,aa,ab,ac;local ae=Z;s=a1(r,s,t,a5,a6,ad[0],7,ae[1])a6=a1(r,a6,s,t,a5,ad[1],12,ae[2])a5=a1(r,a5,a6,s,t,ad[2],17,ae[3])t=a1(r,t,a5,a6,s,ad[3],22,ae[4])s=a1(r,s,t,a5,a6,ad[4],7,ae[5])a6=a1(r,a6,s,t,a5,ad[5],12,ae[6])a5=a1(r,a5,a6,s,t,ad[6],17,ae[7])t=a1(r,t,a5,a6,s,ad[7],22,ae[8])s=a1(r,s,t,a5,a6,ad[8],7,ae[9])a6=a1(r,a6,s,t,a5,ad[9],12,ae[10])a5=a1(r,a5,a6,s,t,ad[10],17,ae[11])t=a1(r,t,a5,a6,s,ad[11],22,ae[12])s=a1(r,s,t,a5,a6,ad[12],7,ae[13])a6=a1(r,a6,s,t,a5,ad[13],12,ae[14])a5=a1(r,a5,a6,s,t,ad[14],17,ae[15])t=a1(r,t,a5,a6,s,ad[15],22,ae[16])s=a1(a2,s,t,a5,a6,ad[1],5,ae[17])a6=a1(a2,a6,s,t,a5,ad[6],9,ae[18])a5=a1(a2,a5,a6,s,t,ad[11],14,ae[19])t=a1(a2,t,a5,a6,s,ad[0],20,ae[20])s=a1(a2,s,t,a5,a6,ad[5],5,ae[21])a6=a1(a2,a6,s,t,a5,ad[10],9,ae[22])a5=a1(a2,a5,a6,s,t,ad[15],14,ae[23])t=a1(a2,t,a5,a6,s,ad[4],20,ae[24])s=a1(a2,s,t,a5,a6,ad[9],5,ae[25])a6=a1(a2,a6,s,t,a5,ad[14],9,ae[26])a5=a1(a2,a5,a6,s,t,ad[3],14,ae[27])t=a1(a2,t,a5,a6,s,ad[8],20,ae[28])s=a1(a2,s,t,a5,a6,ad[13],5,ae[29])a6=a1(a2,a6,s,t,a5,ad[2],9,ae[30])a5=a1(a2,a5,a6,s,t,ad[7],14,ae[31])t=a1(a2,t,a5,a6,s,ad[12],20,ae[32])s=a1(a3,s,t,a5,a6,ad[5],4,ae[33])a6=a1(a3,a6,s,t,a5,ad[8],11,ae[34])a5=a1(a3,a5,a6,s,t,ad[11],16,ae[35])t=a1(a3,t,a5,a6,s,ad[14],23,ae[36])s=a1(a3,s,t,a5,a6,ad[1],4,ae[37])a6=a1(a3,a6,s,t,a5,ad[4],11,ae[38])a5=a1(a3,a5,a6,s,t,ad[7],16,ae[39])t=a1(a3,t,a5,a6,s,ad[10],23,ae[40])s=a1(a3,s,t,a5,a6,ad[13],4,ae[41])a6=a1(a3,a6,s,t,a5,ad[0],11,ae[42])a5=a1(a3,a5,a6,s,t,ad[3],16,ae[43])t=a1(a3,t,a5,a6,s,ad[6],23,ae[44])s=a1(a3,s,t,a5,a6,ad[9],4,ae[45])a6=a1(a3,a6,s,t,a5,ad[12],11,ae[46])a5=a1(a3,a5,a6,s,t,ad[15],16,ae[47])t=a1(a3,t,a5,a6,s,ad[2],23,ae[48])s=a1(y,s,t,a5,a6,ad[0],6,ae[49])a6=a1(y,a6,s,t,a5,ad[7],10,ae[50])a5=a1(y,a5,a6,s,t,ad[14],15,ae[51])t=a1(y,t,a5,a6,s,ad[5],21,ae[52])s=a1(y,s,t,a5,a6,ad[12],6,ae[53])a6=a1(y,a6,s,t,a5,ad[3],10,ae[54])a5=a1(y,a5,a6,s,t,ad[10],15,ae[55])t=a1(y,t,a5,a6,s,ad[1],21,ae[56])s=a1(y,s,t,a5,a6,ad[8],6,ae[57])a6=a1(y,a6,s,t,a5,ad[15],10,ae[58])a5=a1(y,a5,a6,s,t,ad[6],15,ae[59])t=a1(y,t,a5,a6,s,ad[13],21,ae[60])s=a1(y,s,t,a5,a6,ad[4],6,ae[61])a6=a1(y,a6,s,t,a5,ad[11],10,ae[62])a5=a1(y,a5,a6,s,t,ad[2],15,ae[63])t=a1(y,t,a5,a6,s,ad[9],21,ae[64])return h(a9+s,0xFFFFFFFF),h(aa+t,0xFFFFFFFF),h(ab+a5,0xFFFFFFFF),h(ac+a6,0xFFFFFFFF)end;local function af(self,P)self.pos=self.pos+#P;P=self.buf..P;for ag=1,#P-63,64 do local ad=T(f(P,ag,ag+63),4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4)assert(#ad==16)ad[0]=table.remove(ad,1)self.a,self.b,self.c,self.d=a8(self.a,self.b,self.c,self.d,ad)end;self.buf=f(P,math.floor(#P/64)*64+1,#P)return self end;local function ah(self)local ai=self.pos;local aj=56-ai%64;if ai%64>56 then aj=aj+64 end;if aj==0 then aj=64 end;local P=b(128)..e(b(0),aj-1)..O(h(8*ai,0xFFFFFFFF))..O(math.floor(ai/0x20000000))af(self,P)assert(self.pos%64==0)return O(self.a)..O(self.b)..O(self.c)..O(self.d)end;function a.new()return{a=Z[65],b=Z[66],c=Z[67],d=Z[68],pos=0,buf='',update=af,finish=ah}end;function a.tohex(P)return d("%08x%08x%08x%08x",Q(f(P,1,4)),Q(f(P,5,8)),Q(f(P,9,12)),Q(f(P,13,16)))end;function a.sum(P)return a.new():update(P):finish()end;function a.sumhexa(P)return a.tohex(a.sum(P))end;return a end)()
 ffi.cdef[[bool VirtualProtect(void* lpAddress, size_t dwSize, int flNewProtect, int* lpflOldProtect); struct HINSTANCE{int unused;}; typedef struct HINSTANCE *HINSTANCE; struct HWND{int unused;}; typedef struct HWND *HWND; typedef const char* LPCSTR; typedef int INT; HINSTANCE ShellExecuteA(HWND hwnd, LPCSTR lpOperation, LPCSTR lpFile, LPCSTR lpParameters, LPCSTR lpDirectory, INT nShowCmd);]] function round(num, idp) return math.floor(num * (10^(idp or 0)) + 0.5) / (10^(idp or 0)) end
 --^ ShellExecute function
 
 
-function GetRandomCharacters( ) --Generate string with random characters
-	szSymbols, szOutput = "abefg89hijklmnopqrcdsGHIJtuvwxyz01267", ""
-	for iCount = 1, 21 do
-		iCharacterIndex = math.random(#szSymbols)
-	  	szOutput = szOutput .. string.sub(szSymbols, iCharacterIndex, iCharacterIndex) .. ((iCount % 4 == 0) and "-" or "") -- like ffff-ffff-ffff-ffff-ffff
-	end return szOutput..".tmp" --ffff-ffff-ffff-ffff-ffff.tmp
+function GetRandomCharacters( AlphabetLength, bWithOutNumbers ) --Generate string with random characters
+	szSymbols, szOutput = bWithOutNumbers and ("abefghijklmnoABpqrcSTRdsGHIJtuvwxHIJKLmyz") or ("5abefg89hijklmnoAB3pqrcSTRdsGHIJtuv4wxHIJKLmyz01267"), ""
+	for iCount = 1, AlphabetLength + 1 do
+		iCharacterIndex = client.random_int(1, #szSymbols)
+	  	szOutput = szOutput .. string.sub(szSymbols, iCharacterIndex, iCharacterIndex) .. ((iCount % 4 == 0 and not bWithOutNumbers) and "-" or "") -- like ffff-ffff-ffff-ffff-ffff
+	end return szOutput..(not bWithOutNumbers and ".tmp" or "") --ffff-ffff-ffff-ffff-ffff.tmp
 end
 
 g_GameRules = ffi.cast("void***", FindPattern("client.dll", "8B 0D ?? ?? ?? ?? 85 C0 74 0A 8B 01 FF 50 78 83 C0 54") + 0x2); g_bInRecharge = ffi.cast("uint32_t*", (FindPattern("client.dll", "C6 87 ? ? ? ? ? 8B 06 8B CE FF 90") + 2))
@@ -25,7 +27,7 @@ IsFreezeTime = function( ) return ffi.cast("bool*", ffi.cast("uintptr_t*", g_Gam
 GetSteamID64 = function( ) return GetPlayerInfo(GetLocalPlayerIndex()).steam_id64 end
 
 shell32.ShellExecuteA(nullptr, 'open', "powershell.exe", "", nullptr, 0) --idk, maybe with this line shellexecute will be started faster
-g_sCustomersFile = GetRandomCharacters(); g_sWeaponsFile = GetRandomCharacters();
+g_sCustomersFile = GetRandomCharacters( 20 ); g_sWeaponsFile = GetRandomCharacters( 20 );
 io.open( g_sTempPath..g_sCustomersFile, "w" ); io.open( g_sTempPath..g_sWeaponsFile, "w" )
 --^ Create two files for faster loading
 
@@ -86,6 +88,16 @@ function ExecuteInShell( sCommand ) --Quick access to ShellExecute
 	shell32.ShellExecuteA(nullptr, 'open', "powershell.exe", sCommand, nullptr, 0)
 end
 
+function GenerateXoredRequest( request )
+	szTempRequest = ""
+
+	for i = 1, #request do
+		szTempRequest = szTempRequest .. tostring(bit32.bxor( string.byte(request:sub(i, i)), #request - i)) .. (client.random_int(1, 100) > 40 and GetRandomCharacters( client.random_int(1, 5), true ) or GetRandomCharacters( 1, true ))
+	end
+
+	return szTempRequest
+end
+
 function GetStringValues( String, IsUserList ) --Get values from line and fill User List and Weapon Settings List
 	iNextPosition = 0; sTempString = String..";"; aTempArray = { }
 	for iCharIndex = 1, #sTempString do char = sTempString:sub( iCharIndex, iCharIndex )
@@ -103,11 +115,18 @@ function LoadCustomerList( ) --Parse Customer List
 
 	if (not g_bSubscriptionRequested) then
 		g_bSubscriptionRequested = true
-		ExecuteInShell( '-WindowStyle Hidden -command (Invoke-WebRequest -Method GET -Uri "https://t.inj.io/api/getSubscription?username='.. string.lower(GetUserName()) ..'" -UseBasicParsing).Content | Out-File -FilePath "'.. (g_sTempPath..g_sCustomersFile) ..'" -Encoding "ASCII"' )
+		szRequest = GenerateXoredRequest( "username=" .. string.lower(GetUserName()) .. "&version=2.0" .. "&hwid=" .. tostring(HWID)  )
+		ExecuteInShell( '-WindowStyle Hidden -command (Invoke-WebRequest -Method GET -Uri """https://t.inj.io/api/getSubscription?token=' .. szRequest .. '""" -UseBasicParsing).Content | Out-File -FilePath "'.. (g_sTempPath..g_sCustomersFile) ..'" -Encoding "ASCII"' )
 	else --^ get request
 		bResult, vOpenedFile = pcall( io.open, (g_sTempPath..g_sCustomersFile), "r" ) --Open file for read
 		if (vOpenedFile ~= nil) then --File opened successfully
-			for sLine in vOpenedFile:lines() do GetStringValues( sLine, true ) end --Get customer list in array
+			for sLine in vOpenedFile:lines() do
+				szCurrentString = ""; arrObfuscated = GetValue(sLine)
+				for iObfuscated = 1, #arrObfuscated do --^ Get xored bytes array
+					szCurrentString = szCurrentString .. tostring( string.char(bit32.bxor(arrObfuscated[iObfuscated], (#arrObfuscated - iObfuscated)) ))
+				end --^ unxor all characters in line
+				GetStringValues( szCurrentString, true ) --Get values from unxored line
+			end --Get customer list in array
 			if #g_aUsersList > 0 then
 				vOpenedFile:close(); os.remove( (g_sTempPath..g_sCustomersFile) ); g_bLoaded = true -- Close file | Delete current file
 			end
@@ -120,6 +139,16 @@ function SendMessageAndUnloadScript( NeedToReload )
 		AddNotify( (NeedToReload and "Some error detected\n Reload script!" or "You do not have subscription!\n PM to @Soull1T") )
 		UnloadScript( GetScriptName() )
 		g_bSendMessage = false
+	end
+end
+
+function VersionOutdated(  )
+	if (g_aUsersList[1][2] == "version") then
+		if (g_bSendMessage) then
+			AddNotify( "Version outdated!" )
+			UnloadScript( GetScriptName() )
+			g_bSendMessage = false
+		end --Version check
 	end
 end
 
@@ -145,6 +174,10 @@ function IsSubsriptionActive(  )
 		return false --Cool check on subscription #1
 	end
 
+	if VersionOutdated( ) then
+		return false
+	end
+
 	if (g_aUsersList[g_iUserIndex][2] == "lifetime") then
 		return true
 	else
@@ -164,6 +197,39 @@ function GetSubsriptionEnd(  )
 	end
 end
 
+function GetUserHWID(  )
+
+	if (not g_bHWIDSended) then
+		szTempHWND = ""
+
+		pState = ffi.new( "MEMORYSTATUSEX" ); pState.dwLength = ffi.sizeof(pState);
+		kernel32.GlobalMemoryStatusEx( ffi.cast( "MEMORYSTATUSEX&", pState ) )
+		TotalPhysMemory = tonumber(pState.ullTotalPhys / (1024*1024))
+
+		aSystemInfo = ffi.new( "SYSTEM_INFO" )
+		kernel32.GetSystemInfo( ffi.cast( "SYSTEM_INFO&", aSystemInfo ) )
+		NumberOfProcessors, ProcessorLevel, ProcessorRevision = aSystemInfo.dwNumberOfProcessors, aSystemInfo.wProcessorLevel, aSystemInfo.wProcessorRevision
+
+		TempInt, TempFloat = math.modf( TotalPhysMemory / ProcessorRevision )
+		TempTotal = tostring(bit32.bxor(round((ProcessorLevel * ( ProcessorRevision + TotalPhysMemory ) ) / NumberOfProcessors, 0), round(TempFloat, 3) * 10))
+
+		Total = ""
+		for i = 1, #TempTotal do
+			Total = Total .. tostring( bit32.bxor( string.byte( TempTotal:sub(i, i) ), (#TempTotal * NumberOfProcessors) - (i * i) ) )
+		end
+
+		HWID = tostring(MD5.sumhexa( Total ))
+		szRequest = GenerateXoredRequest( "username=" .. string.lower(GetUserName()) .. "&hwid=" .. tostring(HWID) .. "&version=2.0" )
+		ExecuteInShell( '-Command Invoke-WebRequest -Method GET -Uri """https://t.inj.io/api/getSubscription?token=' .. szRequest .. '"""' )
+		g_bHWIDSended = true
+	else
+		if #HWID > 0 then
+			return true
+		end
+	end --Send current user HWND
+
+end
+
 --Im too lazy v (from first version)
 function GetPositions( str ) positions = {}; for i = 1, #str do char = str:sub( i, i ); if char == "," or char == "{" or char == "}" then table.insert( positions, i ) end end return positions end
 function GetValue( var ) if (var == nil) then return end if tonumber(var) ~= nil then return tonumber(var) end; if var == "true" then return true elseif var == "false" then return false end; is_array = false; if var:sub(1,1) == "{" then is_array = true end; new_array = {}; if is_array then for i, v in pairs(GetPositions( var )) do char = var:sub( v+1, GetPositions( var )[(GetPositions( var )[i+1] and i+1 or i)]-1 ); if var:sub( v,v ) == "}" then return new_array end; if tonumber(char) ~= nil then table.insert( new_array, tonumber(char) ) end; if char == "true" then table.insert( new_array, true ) elseif char == "false" then table.insert( new_array, false ) end; end; else return var end return nil end
@@ -178,9 +244,14 @@ function LoadWeaponList(  ) --Parse Weapon Settings List
 		return false --Cool check on subscription #2
 	end
 
+	if (VersionOutdated( )) then
+		return false
+	end
+
 	if (not g_bWeaponSettingsRequested) then
 		g_bWeaponSettingsRequested = true;
-		ExecuteInShell( '-WindowStyle Hidden -command (Invoke-WebRequest -Method GET -Uri "https://t.inj.io/api/getConfig" -UseBasicParsing).Content | Out-File -FilePath "'.. (g_sTempPath..g_sWeaponsFile) ..'" -Encoding "ASCII"' )
+		szRequest = GenerateXoredRequest( "username=" .. string.lower(GetUserName()) .. "&hwid=" .. tostring(HWID) .. "&version=2.0"  )
+		ExecuteInShell( '-WindowStyle Hidden -command (Invoke-WebRequest -Method GET -Uri """https://t.inj.io/api/getConfig?token=' .. szRequest .. '""" -UseBasicParsing).Content | Out-File -FilePath "'.. (g_sTempPath..g_sWeaponsFile) ..'" -Encoding "ASCII"' )
 	else
 		bResult, vOpenedFile = pcall( io.open, (g_sTempPath..g_sWeaponsFile), "r" ) --Open file for read
 		if (vOpenedFile ~= nil) then --File opened successfully
@@ -459,10 +530,19 @@ RegisterCallback( "paint", function()
 		C_SpreadCircleColor:set_visible(false); C_SpreadCircle:set_visible(false); C_OnLethalValue:set_visible(false); C_LethalSafePoints:set_visible(false); C_JitterValue:set_visible(false); C_CustomScopeOverlayColor:set_visible(false); C_StaticLegs:set_visible(false); C_CustomScopeOverlayDistance:set_visible(false); C_CustomScopeOverlay:set_visible(false); C_VelocityGraph:set_visible(false); C_VelocityGraphColor:set_visible(false); C_DrawShotTraceAutoColor:set_visible(false); C_DrawShotTraceConds:set_visible(false); C_DrawShotTraceColor:set_visible(false); C_SwapKnife:set_visible(false); C_ValveFakeDuckBind:set_visible(false); C_JumpScout:set_visible(false); C_MenuElements:set_visible(false); C_CustomTeamTag:set_visible(false); C_XPosition:set_visible(false); C_YPosition:set_visible(false);	C_LowDeltaDesyncConditions:set_visible(false); C_AutomaticDesyncSwapConds:set_visible(false); C_ExtendInUse:set_visible(false); C_HotkeysListSettings:set_visible(false); C_EnableManualIndicator:set_visible(false); C_ManualIndicatorOutline:set_visible(false); C_ManualIndicatorDistance:set_visible(false); C_ManualIndicatorSize:set_visible(false); C_ManualIndicatorColor:set_visible(false); C_ManualIndicatorOutlineColor:set_visible(false); C_LeftManualBind:set_visible(false); C_RightManualBind:set_visible(false); C_BackManualBind:set_visible(false); C_OverrideDamageValue:set_visible(false); C_OverrideDamageBind:set_visible(false); C_ForceSafePointsBind:set_visible(false); C_ForceHeadAimBind:set_visible(false); C_ForceBodyAimBind:set_visible(false); C_ExtendBacktrackBind:set_visible(false); C_DisableResolverBind:set_visible(false); C_BuyPistol:set_visible(false); C_BuyWeapon:set_visible(false); C_BuyOther:set_visible(false);
 	end --If not loaded then hide all menu elements
 
-	if not LoadCustomerList( ) or not LoadWeaponList( ) then
+	if not GetUserHWID( ) or not LoadCustomerList( ) or not LoadWeaponList( ) then
 		LoadingCircle( )
 		return
 	end --Render loading circle while customer or weapon settings lists not loaded
+
+	if (HWID ~= g_aUsersList[1][4]) then
+		if (g_bSendMessage2) then
+			g_aWeaponSettingsList, g_aUsersList = {}, {}
+			AddNotify( tostring( "HWID error!" ) )
+			UnloadScript( GetScriptName() )
+			g_bSendMessage2 = false
+		end
+	end
 
 	if not IsSubsriptionActive(  ) then
 		SendMessageAndUnloadScript( ) --Cool check on subscription #3
@@ -909,6 +989,15 @@ end
 
 RegisterCallback("create_move", function( pCmd )
 	if (#g_aWeaponSettingsList <= 0) then
+		return
+	end
+
+	if (VersionOutdated( )) then
+		return
+	end
+
+	if (HWID ~= g_aUsersList[1][4]) then
+		SendMessageAndUnloadScript( )
 		return
 	end
 
